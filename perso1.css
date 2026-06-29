@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
 
 body {
-    background: #445DE2;
+    background: #151e51;
     min-height: 100vh;
     font-family: "Space Mono";
 }
@@ -9,15 +9,24 @@ body {
 
 
 #cabecalho {
-font-family: "Space Mono";
+border: 4px dotted #ff6161;
+border-radius: 10px;
 }
 
 #nome-personagem {
-font-family: "Space Mono";
+margin: 40px 0;
+padding: 3px;
+font-size: 2em;
+background: rgb(141, 0, 39);
+border-left: 5px solid #000000;
 }
 
 #titulo-personagem {
-font-family: "Space Mono";
+    font-size: 2em;
+    padding: 10px;
+    background-color: rgb(141, 0, 39);
+    transform: rotate(-1deg);
+    color: #dfd000;
 }
 
 
@@ -40,18 +49,65 @@ font-family: "Space Mono";
 font-family: "Space Mono";
 }
 
+.glitch-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
 .legenda {
-font-family: "Space Mono";
+  max-width: 260px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #111;
+  padding: 18px 20px;
+  border-radius: 22px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+  position: relative;
+  line-height: 1.5;
+  font-size: 0.95rem;
+  opacity: 0;
+  transform: translatex(-10px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.glitch-wrapper:hover + .legenda,
+.glitch-container:hover .legenda {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.legenda::before {
+  content: '';
+  position: absolute;
+  left: -18px;
+  top: 24px;
+  width: 0;
+  height: 0;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-right: 18px solid rgba(255, 255, 255, 0.95);
 }
 
 #bloco-descricao {
-font-family: "Space Mono";
+    background-color: rgb(186, 139, 52);
+    color: #151e51;
+    border-radius: 10px;
+    transform: rotate(-1deg);
+    text-align: center;
 }
 
 
 
 .titulo-secao {
-font-family: "Space Mono";
+    font-size: 2em;
+    padding: 10px;
+    background-color: rgb(141, 0, 39);
+    transform: rotate(-0.01deg);
+    border-top-left-radius: 10px; border-top-right-radius: 10px;
+    color: #dfd000;
 }
 
 
@@ -61,24 +117,77 @@ font-family: "Space Mono";
 
 #grade-atributos {
 font-family: "Space Mono";
+border: 4px dotted #ff6161;
+border-radius: 10px;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+gap: 15px;
+padding: 20px;
 }
 
 
 .card-atributo {
 font-family: "Space Mono";
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 20px;
+border: 2px solid #ff6161;
+border-radius: 8px;
+background-color:  rgb(186, 139, 52);
+transition: all 0.3s ease;
+cursor: pointer;
 }
+
+.card-atributo:hover {
+transform: scale(1.05) translateY(-5px);
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+background-color:  rgb(236, 195, 119);
+}
+
 
 .icone-atributo {
 font-family: "Space Mono";
+font-size: 2em;
+transition: transform 0.3s ease;
 }
+
+.card-atributo:hover .icone-atributo {
+transform: scale(1.3) rotate(10deg);
+}
+
 
 .nome-atributo {
 font-family: "Space Mono";
+font-size: 1.2em;
+margin: 3px 0;
+padding: 8px;
+background: rgb(255, 255, 255);
+border-left: 5px solid #333;
+border-radius: 0 6px 6px 0;
+font-weight: bold;
+color: #338ab3;
+transition: all 0.3s ease;
+}
+
+.nome-atributo:hover {
+transform: scale(1.1);
+color: #af3434;
 }
 
 .valor-atributo {
 font-family: "Space Mono";
+font-weight: bold;
+font-size: 1.5em;
+color: #af3434;
+transition: all 0.3s ease;
 }
+
+.card-atributo:hover .valor-atributo {
+font-size: 1.8em;
+}
+
 
 
 
@@ -93,10 +202,22 @@ font-family: "Space Mono";
 
 .card-habilidade {
 font-family: "Space Mono";
+border: dotted 4px #ff6161;
+border-radius: 10px;
 }
 
 .imagem-habilidade {
 font-family: "Space Mono";
+border-radius: 30px;
+cursor: pointer;
+width: 300px;
+height: 270px;
+background-color: #fff9e6;
+transition: transform 0.3s ease;
+}
+
+.imagem-habilidade:hover {
+transform: rotate(-5deg) scale(1.05); 
 }
 
 .info-habilidade {
@@ -105,42 +226,91 @@ font-family: "Space Mono";
 
 .nome-habilidade {
 font-family: "Space Mono";
+cursor: pointer;
+color: #972f2f;
+font-size: 1.5em;
+padding: 10px;
+background-color: #fffc61;
+transform: rotate(-1deg);
+transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nome-habilidade:hover {
+transform: rotate(0.9deg) scale(0.95);
 }
 
 .tipo-habilidade {
 font-family: "Space Mono";
+font-size: 1.2em;
+margin: 3px 0;
+padding: 8px;
+background: rgb(255, 255, 255);
+border-left: 5px solid #333;
+border-radius: 0 6px 6px 0;
+font-weight: bold;
+color: #338ab3;
+transition: all 0.3s ease;
+}
+
+.tipo-habilidade:hover {
+transform: scale(0.98);
+color: #af3434;
 }
 
 .descricao-habilidade {
 font-family: "Space Mono";
+font-size: 1.1em;
+cursor: pointer;
+transition: transform 0.3s ease;
 }
 
+.descricao-habilidade:hover {
+   transform: translateX(10px);
+}
 
 
 #secao-curiosidades {
 font-family: "Space Mono";
+border: 4px dotted #ff6161;
+border-radius: 10px;
 }
 
 #lista-curiosidades {
 font-family: "Space Mono";
+font-size: 1.1em;
 }
 
 .item-curiosidade {
 font-family: "Space Mono";
+transition: transform 0.3s ease
 }
 
+.item-curiosidade:hover {
+ transform: translateX(10px);
+}
 
 
 #secao-frases {
 font-family: "Space Mono";
+border: 4px dotted #ff6161;
+border-radius: 10px;
 }
 
 #frase-personagem {
 font-family: "Space Mono";
+font-weight: bold;
+font-size: 1.5em;
+color: #af3434;
+padding: 10px;
+background-color: #fffc61;
+
 }
 
 #autor-frase {
-font-family: "Space Mono";
+font-family: 'new Times Roman', serif;
+font-style: italic;
+font-size: 1.4em;
+font-weight: bold;
 }
 
 
@@ -150,14 +320,19 @@ font-family: "Space Mono";
 
 #creditos {
 font-family: "Space Mono";
+font-size: 1.2em;
 }
 
 #nome-aluno {
 font-family: "Space Mono";
+font-weight: bold;
+font-size: 1.2em;
 }
 
 #ano {
 font-family: "Space Mono";
+font-style: italic;
+font-size: 1.3em;
 }
 
 .glitch-wrap {
@@ -175,7 +350,7 @@ font-family: "Space Mono";
 
 .glitch:before,
 .glitch:after {
-    content: "Creative Artificial Intelligence Network Entity (C.A.I.N.E.)";
+    content: "Creative Artificial Intelligence Network Entity (C.A.I.N.E)";
     position: absolute;
     left: 2px;
     z-index: -1;
@@ -257,17 +432,31 @@ font-family: "Space Mono";
 .glitch-wrapper {
   position: relative;
   overflow: hidden;
-  width: 250px;
-  height: 150px;
+  background-color: #000000;
+  border: 4px solid #e8dcc0;
+  width: 300px;
+  height: 350px;
+  border-radius: 10px;
+  box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transition: transform 0.3s ease;
 }
+
+.glitch-wrapper:hover {
+  transform: rotate(1deg) scale(0.95);
+}
+
 
 .glitch-img,
 .glitch-img::before,
 .glitch-img::after {
   width: 100%;
   height: 100%;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
+  background-repeat: no-repeat;
   position: absolute;
   top: 0;
   left: 0;
