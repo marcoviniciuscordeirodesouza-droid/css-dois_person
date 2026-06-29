@@ -254,96 +254,118 @@ font-family: "Space Mono";
     }
 }
 
-.glitchimg-wrap {
-    position: relative;
-    cursor: pointer;
+.glitch-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 250px;
+  height: 150px;
 }
 
-.glitchimg {
-    font-family: "Space Mono";
-    color: #ffffff;
-    font-size: 1rem;
-    display: inline-block;
+.glitch-img,
+.glitch-img::before,
+.glitch-img::after {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-
-.glitchimg:hover:before,
-.glitchimg:hover:after {
-    content: "Creative Artificial Intelligence Network Entity (C.A.I.N.E.)";
-    position: absolute;
-    left: 2px;
-    z-index: -1;
-    visibility: hidden;
+.glitch-img::before,
+.glitch-img::after {
+  content: '';
+  display: block;
+  background-image: inherit;
+  background-repeat: no-repeat;
+  background-size: inherit;
+  background-position: inherit;
+  pointer-events: none;
+  opacity: 0;
 }
 
-.glitchimg:hover {
-    animation: glitch 1s linear;
+.glitch-img::before {
+  z-index: 3;
+  transform: translateX(12px);
+  mix-blend-mode: screen;
+  filter: hue-rotate(-20deg) saturate(2) brightness(1.1);
+  animation: pulse-before 2s infinite;
+  animation-delay: 4s;
 }
 
-.glitchimg:before {
-    animation: glitchTop 1.2s linear ;
-    clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+.glitch-img::after {
+  z-index: 2;
+  transform: translateX(-12px);
+  mix-blend-mode: screen;
+  filter: hue-rotate(160deg) saturate(1.8) brightness(1.05);
+  animation: pulse-after 2s infinite;
+  animation-delay: 4.2s;
 }
 
-.glitchimg:after {
-    animation: glitchBotom 1.7s linear ;
-    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-    -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+@keyframes glitch-anim-1 {
+  0%   { clip-path: inset(0% 0 70% 0); }
+  12%  { clip-path: inset(30% 0 40% 0); }
+  24%  { clip-path: inset(0% 0 0% 0); }
+  36%  { clip-path: inset(60% 0 10% 0); }
+  48%  { clip-path: inset(10% 0 50% 0); }
+  60%  { clip-path: inset(0% 0 0% 0); }
+  72%  { clip-path: inset(40% 0 20% 0); }
+  84%  { clip-path: inset(20% 0 60% 0); }
+  100% { clip-path: inset(0% 0 0% 0); }
 }
 
-@keyframes glitch {
-
-    3%,
-    60% {
-        transform: skew(5deg);
-    }
-
-    62% {
-        transform: translate(-10px, 2px) skew(30deg);
-    }
-
-    64% {
-        transform: translate(6px, -1px) skew(-15deg);
-    }
-
+@keyframes glitch-anim-2 {
+  0%   { clip-path: inset(50% 0 0% 0); }
+  15%  { clip-path: inset(10% 0 60% 0); }
+  30%  { clip-path: inset(0% 0 0% 0); }
+  45%  { clip-path: inset(70% 0 10% 0); }
+  60%  { clip-path: inset(5% 0 80% 0); }
+  75%  { clip-path: inset(0% 0 0% 0); }
+  90%  { clip-path: inset(30% 0 40% 0); }
+  100% { clip-path: inset(0% 0 0% 0); }
 }
 
-@keyframes glitchTop {
-
-    1%,
-    60% {
-        transform: translate(-2px, 0);
-        visibility: visible;
-    }
-
-    64% {
-        transform: translate(-5px, 1px);
-        visibility: visible;
-    }
-
-    62% {
-        transform: translate(15px, -1px) skew(-13deg);
-        visibility: visible;
-    }
+@keyframes pulse-before {
+  0% {
+    opacity: 1;
+    transform: translateX(20px) skewX(-6deg);
+    clip-path: inset(10% 0 60% 0);
+  }
+  10% {
+    opacity: 1;
+    transform: translateX(8px) skewX(-4deg);
+    clip-path: inset(30% 0 40% 0);
+  }
+  16% {
+    opacity: 0;
+    transform: translateX(0) skewX(0);
+    clip-path: inset(0% 0 0% 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(0) skewX(0);
+  }
 }
 
-@keyframes glitchBotom {
-
-    1%,
-    64% {
-        transform: translate(-2px, 0);
-        visibility: visible;
-    }
-
-    4%,
-    60% {
-        transform: translate(-2px, 0);
-        visibility: visible;
-    }
-
-    62% {
-        transform: translate(-22px, 5px) skew(21deg);
-        visibility: visible;
-    }
+@keyframes pulse-after {
+  0% {
+    opacity: 1;
+    transform: translateX(-20px) skewX(6deg);
+    clip-path: inset(60% 0 10% 0);
+  }
+  10% {
+    opacity: 1;
+    transform: translateX(-8px) skewX(4deg);
+    clip-path: inset(40% 0 30% 0);
+  }
+  16% {
+    opacity: 0;
+    transform: translateX(0) skewX(0);
+    clip-path: inset(0% 0 0% 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(0) skewX(0);
+  }
 }
