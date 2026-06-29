@@ -253,3 +253,97 @@ font-family: "Space Mono";
         visibility: visible;
     }
 }
+
+.glitchimg-wrap {
+    position: relative;
+    cursor: pointer;
+}
+
+.glitchimg {
+    font-family: "Space Mono";
+    color: #ffffff;
+    font-size: 1rem;
+    display: inline-block;
+}
+
+
+.glitchimg:hover:before,
+.glitchimg:hover:after {
+    content: "Creative Artificial Intelligence Network Entity (C.A.I.N.E.)";
+    position: absolute;
+    left: 2px;
+    z-index: -1;
+    visibility: hidden;
+}
+
+.glitchimg:hover {
+    animation: glitch 1s linear;
+}
+
+.glitchimg:before {
+    animation: glitchTop 1.2s linear ;
+    clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+.glitchimg:after {
+    animation: glitchBotom 1.7s linear ;
+    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitch {
+
+    3%,
+    60% {
+        transform: skew(5deg);
+    }
+
+    62% {
+        transform: translate(-10px, 2px) skew(30deg);
+    }
+
+    64% {
+        transform: translate(6px, -1px) skew(-15deg);
+    }
+
+}
+
+@keyframes glitchTop {
+
+    1%,
+    60% {
+        transform: translate(-2px, 0);
+        visibility: visible;
+    }
+
+    64% {
+        transform: translate(-5px, 1px);
+        visibility: visible;
+    }
+
+    62% {
+        transform: translate(15px, -1px) skew(-13deg);
+        visibility: visible;
+    }
+}
+
+@keyframes glitchBotom {
+
+    1%,
+    64% {
+        transform: translate(-2px, 0);
+        visibility: visible;
+    }
+
+    4%,
+    60% {
+        transform: translate(-2px, 0);
+        visibility: visible;
+    }
+
+    62% {
+        transform: translate(-22px, 5px) skew(21deg);
+        visibility: visible;
+    }
+}
