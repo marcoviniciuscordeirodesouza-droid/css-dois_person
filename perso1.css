@@ -179,7 +179,7 @@ color: #af3434;
 .valor-atributo {
 font-family: "Space Mono";
 font-weight: bold;
-font-size: 1.5em;
+font-size: 3em;
 color: #af3434;
 transition: all 0.3s ease;
 }
@@ -197,6 +197,8 @@ font-family: "Space Mono";
 
 #lista-habilidades {
 font-family: "Space Mono";
+display: grid;
+gap: 20px;
 }
 
 
@@ -204,24 +206,71 @@ font-family: "Space Mono";
 font-family: "Space Mono";
 border: dotted 4px #ff6161;
 border-radius: 10px;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+gap: 10px;
+background-color: #af3434;
+padding: 16px;
 }
 
 .imagem-habilidade {
 font-family: "Space Mono";
-border-radius: 30px;
 cursor: pointer;
 width: 300px;
-height: 270px;
-background-color: #fff9e6;
+height: 200px;
 transition: transform 0.3s ease;
+border-radius: 20px;
 }
 
-.imagem-habilidade:hover {
-transform: rotate(-5deg) scale(1.05); 
+
+.monitor {
+  display: inline-flex;
+  position: relative;
+  padding: 14px;
+  background: #111;
+  border: 6px solid #333;
+  border-radius: 28px;
+  box-shadow: inset 0 0 0 4px #0b0b0b, 0 8px 20px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+}
+
+.monitor:hover {
+  transform: rotate(-5deg) scale(1.05);
+}
+
+
+.monitor::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 46px;
+  height: 8px;
+  background: #444;
+  border-radius: 4px;
+}
+
+.monitor::after {
+  content: '';
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 18px;
+  background: #333;
+  border-radius: 0 0 12px 12px;
 }
 
 .info-habilidade {
 font-family: "Space Mono";
+flex: 1;
+display: flex;
+flex-direction: column;
+gap: 12px;
 }
 
 .nome-habilidade {
@@ -262,16 +311,18 @@ font-family: "Space Mono";
 font-size: 1.1em;
 cursor: pointer;
 transition: transform 0.3s ease;
+background-color: rgb(186, 139, 52);
+border-spacing: 10px;
+border-radius: 10px;
 }
 
 .descricao-habilidade:hover {
-   transform: translateX(10px);
+  transform: translateX(5px);
 }
 
 
 #secao-curiosidades {
 font-family: "Space Mono";
-border: 4px dotted #ff6161;
 border-radius: 10px;
 }
 
@@ -292,7 +343,6 @@ transition: transform 0.3s ease
 
 #secao-frases {
 font-family: "Space Mono";
-border: 4px dotted #ff6161;
 border-radius: 10px;
 }
 
