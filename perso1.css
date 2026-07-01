@@ -11,10 +11,11 @@ body {
 #cabecalho {
 border: 4px dotted #ff6161;
 border-radius: 10px;
+background-color: #af3434;
 }
 
 #nome-personagem {
-margin: 40px 0;
+margin: 20px 0;
 padding: 3px;
 font-size: 2em;
 background: rgb(141, 0, 39);
@@ -24,9 +25,9 @@ border-left: 5px solid #000000;
 #titulo-personagem {
     font-size: 2em;
     padding: 10px;
-    background-color: rgb(141, 0, 39);
+    background-color: #dfd000;
     transform: rotate(-1deg);
-    color: #dfd000;
+    color: rgb(141, 0, 39);
 }
 
 
@@ -39,6 +40,7 @@ font-family: "Space Mono";
 
 #secao-apresentacao {
 font-family: "Space Mono";
+margin-top: 30px;
 }
 
 #bloco-imagem {
@@ -102,14 +104,26 @@ font-family: "Space Mono";
 
 
 .titulo-secao {
-    font-size: 2em;
-    padding: 10px;
-    background-color: rgb(141, 0, 39);
-    transform: rotate(-0.01deg);
-    border-top-left-radius: 10px; border-top-right-radius: 10px;
-    color: #dfd000;
+  font-size: 2em;
+  padding: 10px 20px;
+  background-color: rgb(141, 0, 39);
+  transform: rotate(-0.01deg);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  color: #dfd000;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 0 12px 0;
 }
 
+#secao-curiosidades .titulo-secao {
+    display: block;
+    width: calc(100% + 40px);
+    margin: -20px -20px 20px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
 
 #secao-atributos {
 font-family: "Space Mono";
@@ -191,8 +205,16 @@ font-size: 1.8em;
 
 
 
+/* Espaçamento acima da seção e título sobreposto ao primeiro card */
 #secao-habilidades {
 font-family: "Space Mono";
+margin-top: 20px;
+margin-bottom: 30px;
+}
+
+#secao-habilidades .titulo-secao {
+  margin-bottom: -8px; /* puxa os cards para cima até encostar na barra vermelha */
+  padding-bottom: 12px;
 }
 
 #lista-habilidades {
@@ -310,6 +332,8 @@ color: #af3434;
 font-family: "Space Mono";
 font-size: 1.1em;
 cursor: pointer;
+color: #151e51;
+text-align: center;
 transition: transform 0.3s ease;
 background-color: rgb(186, 139, 52);
 border-spacing: 10px;
@@ -322,28 +346,44 @@ border-radius: 10px;
 
 
 #secao-curiosidades {
-font-family: "Space Mono";
-border-radius: 10px;
+  font-family: "Space Mono";
+  border-radius: 10px;
+  border: 4px dotted #ff6161;
+  padding: 20px;
+  background-color: #f7eb6f;
 }
 
 #lista-curiosidades {
-font-family: "Space Mono";
-font-size: 1.1em;
+  font-family: "Space Mono";
+  font-size: 1.1em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
 }
 
 .item-curiosidade {
-font-family: "Space Mono";
-transition: transform 0.3s ease
+  font-family: "Space Mono";
+  transition: transform 0.3s ease;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background-color: #fff8b3;
+  border: 2px dashed #d9c020;
 }
 
 .item-curiosidade:hover {
- transform: translateX(10px);
+  transform: translateX(10px);
 }
 
 
 #secao-frases {
 font-family: "Space Mono";
 border-radius: 10px;
+}
+
+#secao-frases {
+  margin-top: 30px;
 }
 
 #frase-personagem {
@@ -379,6 +419,69 @@ font-weight: bold;
 font-size: 1.2em;
 }
 
+#secao-frases {
+  padding: 24px;
+  background: linear-gradient(180deg, rgba(247,235,111,0.08), rgba(247,235,111,0.04));
+  border: 4px dotted #ff6161;
+}
+
+#secao-frases .titulo-secao {
+  display: block;
+  width: calc(100% + 48px);
+  margin: -24px -24px 16px;
+  padding: 10px 24px;
+  box-sizing: border-box;
+}
+
+#frase-personagem {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #151e51;
+  padding: 18px 22px;
+  border-radius: 10px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+  position: relative;
+}
+
+#frase-personagem::before {
+  content: "“";
+  font-size: 3rem;
+  color: #af3434;
+  position: absolute;
+  left: 10px;
+  top: 6px;
+}
+
+#frase-personagem::after {
+  content: "”";
+  font-size: 3rem;
+  color: #af3434;
+  position: absolute;
+  right: 10px;
+  bottom: 6px;
+}
+
+#autor-frase {
+  text-align: right;
+  font-family: "Space Mono";
+  font-style: italic;
+  color: #dfd000;
+  margin-top: 12px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/* Rodapé: manter discreto mas alinhado com escolhas de cor */
+#rodape {
+  padding: 18px 20px;
+  text-align: center;
+  color: #dfd000;
+}
+
 #ano {
 font-family: "Space Mono";
 font-style: italic;
@@ -399,15 +502,20 @@ font-size: 1.3em;
 
 
 .glitch:before,
-.glitch:after {
-    content: "Creative Artificial Intelligence Network Entity (C.A.I.N.E)";
+.glitch:after,
+.glitch-deus:before,
+.glitch-deus:after {
+    content: attr(data-text);
     position: absolute;
     left: 2px;
     z-index: -1;
     visibility: hidden;
 }
 
-.glitch {
+.glitch,
+.glitch-deus {
+    font-family: "Space Mono";
+    display: inline-block;
     animation: glitch 1s linear infinite;
 }
 
@@ -607,4 +715,78 @@ font-size: 1.3em;
     opacity: 0;
     transform: translateX(0) skewX(0);
   }
+}
+
+.glitch-wrap {
+    position: relative;
+    cursor: pointer;
+}
+
+
+.glitch-deus:before {
+    animation: glitchTop 1.2s linear infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+.glitch-deus:after {
+    animation: glitchBotom 1.7s linear infinite;
+    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitch {
+
+    3%,
+    60% {
+        transform: skew(5deg);
+    }
+
+    62% {
+        transform: translate(-10px, 2px) skew(30deg);
+    }
+
+    64% {
+        transform: translate(6px, -1px) skew(-15deg);
+    }
+
+}
+
+@keyframes glitchTop {
+
+    1%,
+    60% {
+        transform: translate(-2px, 0);
+        visibility: visible;
+    }
+
+    64% {
+        transform: translate(-5px, 1px);
+        visibility: visible;
+    }
+
+    62% {
+        transform: translate(15px, -1px) skew(-13deg);
+        visibility: visible;
+    }
+}
+
+@keyframes glitchBotom {
+
+    1%,
+    64% {
+        transform: translate(-2px, 0);
+        visibility: visible;
+    }
+
+    4%,
+    60% {
+        transform: translate(-2px, 0);
+        visibility: visible;
+    }
+
+    62% {
+        transform: translate(-22px, 5px) skew(21deg);
+        visibility: visible;
+    }
 }
