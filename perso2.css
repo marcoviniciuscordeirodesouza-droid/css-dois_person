@@ -246,47 +246,6 @@ transition: transform 0.3s ease;
 border-radius: 20px;
 }
 
-
-.monitor {
-  display: inline-flex;
-  position: relative;
-  padding: 14px;
-  background: #111;
-  border: 6px solid #333;
-  border-radius: 28px;
-  box-shadow: inset 0 0 0 4px #0b0b0b, 0 8px 20px rgba(0, 0, 0, 0.35);
-  cursor: pointer;
-}
-
-.monitor:hover {
-  transform: rotate(-5deg) scale(1.05);
-}
-
-
-.monitor::before {
-  content: '';
-  position: absolute;
-  top: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 46px;
-  height: 8px;
-  background: #444;
-  border-radius: 4px;
-}
-
-.monitor::after {
-  content: '';
-  position: absolute;
-  bottom: -18px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120px;
-  height: 18px;
-  background: #333;
-  border-radius: 0 0 12px 12px;
-}
-
 .info-habilidade {
 font-family: "Space Mono";
 flex: 1;
