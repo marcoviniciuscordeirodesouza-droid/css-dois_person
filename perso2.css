@@ -1,3 +1,163 @@
 body {
-    color:aquamarine;
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+
+
+#cabecalho {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+#nome-personagem {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+#titulo-personagem {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+
+#conteudo-principal {
+font-family: Arial, Helvetica, sans-serif;
+}
+ 
+
+#secao-apresentacao {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+#bloco-imagem {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+#imagem-personagem {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.legenda {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+#bloco-descricao {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+.titulo-secao {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+.texto-descricao {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+#secao-atributos {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+#grade-atributos {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.card-atributo {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.icone-atributo {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.nome-atributo {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.valor-atributo {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+#secao-habilidades {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+#lista-habilidades {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.card-habilidade {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.imagem-habilidade {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.info-habilidade {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.nome-habilidade {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.tipo-habilidade {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.descricao-habilidade {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+#secao-curiosidades {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+#lista-curiosidades {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.item-curiosidade {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+#secao-frases {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+#frase-personagem {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+#autor-frase {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+
+#rodape {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+#creditos {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+#nome-aluno {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+#ano {
+font-family: Arial, Helvetica, sans-serif;
+}
+
